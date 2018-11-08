@@ -23,6 +23,8 @@ object WeakQueens extends StrictLogging {
       p
     }.sum
 
+    // Small heuristic:
+    // for W=N-1 number of all permutations is equal to N in power of N
     val last = Math.pow(n, n).toLong
     logger.info(s"permutations for w=${n - 1} : $last")
 
