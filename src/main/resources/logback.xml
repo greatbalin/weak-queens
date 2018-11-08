@@ -1,0 +1,17 @@
+<configuration scan="true" scanPeriod="60 seconds">
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%date{yyyy-MM-dd HH:mm:ss.SSSZ, UTC} [%-15thread{15}] [%-5level] %-11logger{11} %message%n%xException</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="ASYNCSTDOUT" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="STDOUT"/>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="ASYNCSTDOUT"/>
+  </root>
+
+</configuration>
